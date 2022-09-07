@@ -27,3 +27,6 @@
     - name: Remove dependencies that are no longer required
       ansible.builtin.apt:
         autoremove: yes
+
+    - name: Unconditionally reboot the machine with all defaults
+      ansible.builtin.reboot:
