@@ -3,22 +3,22 @@
 - name: Touch each Raspberry Pi and do maintenance
   hosts: all
   gather_facts: false
-  become: false
+  become: true
 
   tasks:
 
     - name: Upgrade the OS (apt-get dist-upgrade)
       ansible.builtin.apt:
-      upgrade: dist
+        upgrade: dist
 
     - name: Run the equivalent of "apt-get update" as a separate step
       ansible.builtin.apt:
-      update_cache: yes
+        update_cache: yes
 
     - name: Update all packages to their latest version
       ansible.builtin.apt:
-      name: "*"
-      state: latest
+        name: "*"
+        state: latest
 
     - name: Remove useless packages from the cache
       ansible.builtin.apt:
