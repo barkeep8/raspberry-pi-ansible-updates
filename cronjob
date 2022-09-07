@@ -1,1 +1,1 @@
-7 5 * * SUN
+7 5 * * SUN ~/raspberry-pi-ansible-updates/updates.sh &
